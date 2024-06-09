@@ -1,21 +1,19 @@
 #include <stdio.h>
 int main(){
-	const int tamvet=50, tamlista=10;
-	int vet[tamvet],posicao,posvet,achou,numero;
-	printf("\n digite os dados do vetor\n");
-	for(posicao=1;posicao<=tamlista;posicao++){
-		scanf("%d",&numero);
-//verifica se o numero esta no vetor
-		posvet=0;
-		achou=0;
-		while(posvet<=tamvet-1&&achou==0){
-			if(numero==vet[posvet])
-				achou=1;
-			else posvet++;
-		}
+	const int tamvet=50;
+	int vet1[tamvet],vet2[tamvet],posicao;
+	for(posicao=0;posicao<tamvet;posicao++){
+		scanf("%d",&vet1[posicao]);
+		if(vet1[posicao]%2 == 0)
+			vet2[posicao]=vet1[posicao]+1;
+		else
+			vet2[posicao]=vet1[posicao]-1;
+		
 	}
-	if(achou==1)
-		printf("achou na posicao: %d\n",posvet);
-	else
-		printf("nao achou o numero\n");
+	printf("elementos de VET 1 e VET 2:");
+	for(posicao=0;posicao<tamvet;posicao++){
+		printf("%d\n",vet1[posicao]);
+		printf("%d\n",vet2[posicao]);
+	}
+	return 0;
 }
